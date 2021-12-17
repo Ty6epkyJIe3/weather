@@ -7,7 +7,7 @@ export const ForecastBlock = () => {
     if (weatherState !== null) {
         return (
             <div>
-               {weatherState.weather[0].main}
+               {weatherState?.weather?.[0]?.main}
             </div>
         );
     } else {

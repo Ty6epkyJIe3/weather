@@ -2,11 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     weatherData: {
-        weather: [
-            {
-                icon: null
-            }
-        ]
+
     }
 };
 
