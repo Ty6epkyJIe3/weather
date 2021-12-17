@@ -1,7 +1,8 @@
 import { InputStyled, ButtonStyled } from './SearchField.styles';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {requestData} from "../../store/reducers/geocording.slice";
+import {requestData} from "../../store/reducers/geocoding.slice";
+
 
 export const SearchField = () => {
     const dispatch = useDispatch();

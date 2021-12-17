@@ -3,7 +3,7 @@ import {
     changeLoadingStatus,
     fetchWeatherError,
     REQUEST_DATA,
-} from "../reducers/geocording.slice";
+} from "../reducers/geocoding.slice";
 
 import {GEOCORDING_API_URL, WEATHER_API_URL} from "../../core/axios";
 
@@ -21,8 +21,7 @@ function* workerLoadCoordinates(payload) {
             WEATHER_API_URL.get,
             `weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
         );
-        console.log(getWeatherByCoord);
-        yield put(uploadWeather(getWeatherByCoord));
+        yield put(uploadWeather(getWeatherByCoord.data));
     } catch (e) {
         yield put(fetchWeatherError());
         yield console.log(e);

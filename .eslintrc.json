@@ -20,6 +20,7 @@
     ],
     "rules": {
         "semi": [2, "always"],
-        "no-multiple-empty-lines": "off"
+        "no-multiple-empty-lines": "off",
+        "no-template-curly-in-string": "off"
     }
 }

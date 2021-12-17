@@ -1,7 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    weatherData: []
+    weatherData: {
+        weather: [
+            {
+                icon: null
+            }
+        ]
+    }
 };
 
 export const weatherSlice = createSlice({
@@ -9,11 +15,11 @@ export const weatherSlice = createSlice({
     initialState,
     reducers: {
         uploadWeather: (state, action) => {
-            state.weatherData = action.payload.data;
+            state.weatherData = action.payload;
         }
     }
 });
 
 export const { uploadWeather } = weatherSlice.actions;
 
-export const weather = weatherSlice.reducer;
+export const weatherReducer = weatherSlice.reducer;
