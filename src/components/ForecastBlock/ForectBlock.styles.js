@@ -4,7 +4,6 @@ export const ForecastBox = styled.div`
   width: 40%;
   margin:auto;
   min-width: 570px;
-  font-size: 1rem;
   border: 0px solid;
   border-radius: 20px;
   text-align: left;
