@@ -7,24 +7,27 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
     isLoading: false,
-    error: false
+    isError: false,
+    isUsed: false
 };
 
-export const coordinatesSlice = createSlice({
-    name: 'coordinates',
+export const statusSlice = createSlice({
+    name: 'status',
     initialState,
     reducers: {
         changeLoadingStatus: (state) => {
-            console.log(changeLoadingStatus.type);
             state.isLoading = !state.isLoading;
         },
         fetchWeatherError: (state) => {
             state.isLoading = false;
-            state.error = true;
+            state.isError = true;
+        },
+        firstUseDetection: (state) => {
+            state.isUsed = true;
         }
     }
 });
 
-export const { changeLoadingStatus, fetchWeatherError } = coordinatesSlice.actions;
+export const {changeLoadingStatus, fetchWeatherError, firstUseDetection} = statusSlice.actions;
 
-export const coordinatesReducer = coordinatesSlice.reducer;
+export const statusReducer = statusSlice.reducer;
