@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 
- export const REQUEST_DATA = 'REQUEST_DATA';
+ export const REQUEST_DATA = "REQUEST_DATA";
  export const requestData = (city) => {
      return({type: REQUEST_DATA, city});
  };
@@ -12,15 +12,18 @@ const initialState = {
 };
 
 export const statusSlice = createSlice({
-    name: 'status',
+    name: "status",
     initialState,
     reducers: {
-        changeLoadingStatus: (state) => {
+        reverseIsLoading: (state) => {
             state.isLoading = !state.isLoading;
         },
-        fetchWeatherError: (state) => {
+        toggleError: (state) => {
             state.isLoading = false;
             state.isError = true;
+        },
+        resetError: (state) => {
+            state.isError = false;
         },
         firstUseDetection: (state) => {
             state.isUsed = true;
@@ -28,6 +31,6 @@ export const statusSlice = createSlice({
     }
 });
 
-export const {changeLoadingStatus, fetchWeatherError, firstUseDetection} = statusSlice.actions;
+export const {reverseIsLoading, toggleError, resetError, firstUseDetection} = statusSlice.actions;
 
 export const statusReducer = statusSlice.reducer;

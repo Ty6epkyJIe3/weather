@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const SvgCard = styled.img`
     margin-top: 0px;

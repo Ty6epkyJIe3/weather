@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    city: '',
+    city: "",
     weatherData: {
 
     }
 };
 
 export const weatherSlice = createSlice({
-    name: 'weather',
+    name: "weather",
     initialState,
     reducers: {
         changeCity: (state, action) => {
